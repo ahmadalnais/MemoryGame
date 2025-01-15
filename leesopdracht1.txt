@@ -1,0 +1,18 @@
+Artikel 1.
+a. Meest belemmerende frustratie bij (on)toegankelijkheid:
+
+Voor iemand die blind is, lijkt het ontbreken van duidelijke audio beschrijvingen voor links en knoppen het meest belemmerend.
+Dit maakt navigeren onnodig ingewikkeld en vertraagt het proces van het vinden van informatie, omdat het leidt tot trial-and-error.
+Het niet weten waar een knop of link heen leidt, beperkt de autonomie en gebruikerservaring enorm.
+
+b. Belemmeringen als ziend persoon:
+
+Ook als ziende gebruiker kom ik obstakels tegen, zoals slecht ontworpen navigatiestructuren of auto-play video’s die plotseling starten.
+Dit zorgt voor frustratie, vooral als er geen duidelijke manier is om het af te breken.
+Ik zou dit verbeteren door intuïtieve ontwerpen te gebruiken, knoppen goed te labelen en gebruikers zelf te laten beslissen over het afspelen van media.
+
+Artikel 2.
+De schrijver van het artikel pleit voor een mobile-first benadering in responsive webdesign.
+Ik ben het eens met deze voorkeur, omdat het, zoals in het artikel wordt genoemd, zorgt voor minder redundante code.
+Bij een desktop-first aanpak wordt vaak code geschreven die later moet worden teruggezet naar de standaardwaarden, zoals het veranderen van "display: flex" terug naar "display: block".
+Dit verspilt tijd en maakt de CSS onnodig complex. De eenvoud en efficiëntie van de mobile-first aanpak zijn overtuigende voordelen.
