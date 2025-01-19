@@ -33,6 +33,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 button:hover {
@@ -58,8 +59,9 @@ button:hover {
 
 .card {
     width: 100%;
-    padding-top: 100%; /* Houd kaarten vierkant */
-    background-color: #4CAF50;
+    padding-top: 100%;
+    background-color: var(--closed-color);
+    transition: background-color 0.3s ease;
     position: relative;
     cursor: pointer;
     border-radius: 5px;
@@ -67,20 +69,33 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    color: transparent;
-    font-weight: bold;
+    overflow: hidden;
 }
 
-.card.open,
-.card.found {
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: none;
+
+}
+
+
+.card.open {
     color: white;
+    background-color: var(--open-color);
+}
+
+.card.open img {
+    display: block;
 }
 
 .card.found {
-    background-color: #800080;
+    background-color: var(--found-color);
     cursor: default;
 }
+
 
 /* Sidebar */
 .sidebar {
@@ -126,4 +141,10 @@ button:hover {
         width: 100%;
         margin-top: 20px;
     }
+}
+
+:root {
+    --closed-color: #89f357;
+    --open-color: #006400;
+    --found-color: #800080;
 }

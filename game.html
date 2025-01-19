@@ -3,50 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Memory Game</title>
+    <title>Memory Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
     <h1>Javascript Memory</h1>
 
-    <!-- Info-sectie -->
+    <!-- Informatie over het spel -->
     <div class="info">
-        <p>Verlopen tijd: <span id="elapsed-time">0</span> seconden</p>
-        <p>Gevonden kaart-paren: <span id="found-pairs">0</span></p>
-        <button id="start-game">Start Spel</button>
+        <p>⏱ Verlopen tijd: <span id="time-elapsed">0 seconden</span></p>
+        <p>🎯 Gevonden kaart-paren: <span id="pairs-found">0</span></p>
     </div>
 
-    <!-- Memory grid -->
+    <!-- Knop om het spel te starten -->
+    <button id="start-game" class="btn">Start Spel</button>
+
     <div class="memory-game">
+        <!-- Dynamisch geladen kaarten -->
         <div class="memory-grid" id="memory-grid">
-            <!-- De kaarten worden dynamisch geladen via JavaScript -->
+            <!-- Kaarten worden hier geladen door JavaScript -->
         </div>
 
-        <!-- Sidebar -->
+        <!-- Sidebar voor instellingen en statistieken -->
         <aside class="sidebar">
-            <h2>Top vijf</h2>
-            <ol>
+            <h2>🏆 Top vijf</h2>
+            <ol id="leaderboard">
                 <li>Barack Obama : 200</li>
                 <li>Bernie Sanders : 300</li>
                 <li>Hillary Clinton : 400</li>
                 <li>Donald Trump : 500</li>
                 <li>Jeb Bush : 600</li>
             </ol>
-            <p><b>Gemiddelde speeltijd:</b> <span>0s (64s)</span></p>
+
+            <p><b>📊 Gemiddelde speeltijd:</b> <span id="average-time">0s (64s)</span></p>
+
+            <!-- Instellingen -->
             <div class="controls">
-                <label><b>Karakter op kaarten:</b>
-                    <input type="number" id="char-count" min="1" max="10" value="6">
+                <label for="num-cards">
+                    <b>🎲 Aantal kaarten:</b>
+                    <input type="number" id="num-cards" min="4" max="16" value="6">
                 </label>
-                <label><b>Afmeting bord:</b>
+
+                <label for="board-size">
+                    <b>🔲 Afmeting bord:</b>
                     <select id="board-size">
                         <option value="4">4 x 4</option>
                         <option value="6">6 x 6</option>
-                        <option value="8">8 x 8</option>
+                    </select>
+                </label>
+
+                <label for="image-selector">
+                    <b>🖼 Kies plaatjes:</b>
+                    <select id="image-selector">
+                        <option value="random">Willekeurig</option>
+                        <option value="dogs">Hondenplaatjes</option>
+                        <option value="cats">Kattenplaatjes</option>
+                        <option value="persons">Niet-bestaande personen</option>
+                        <option value="pizzas">Niet-bestaande pizza's</option>
                     </select>
                 </label>
             </div>
 
+            <!-- Kleurinstellingen -->
+            <h3>🎨 Kleurinstellingen</h3>
             <table>
                 <tr>
                     <td><label for="closed-color">Kaartkleur:</label></td>
@@ -58,14 +78,17 @@
                 </tr>
                 <tr>
                     <td><label for="found-color">Gevonden:</label></td>
-                    <td><input class="color-width" type="color" id="found-color" value="#800080"></td>
+                    <td><input type="color" id="found-color" value="#800080"></td>
                 </tr>
             </table>
 
-            <button class="new-game" id="new-game">Nieuw Spel</button>
+            <!-- Knop voor een nieuw spel -->
+            <button class="new-game" id="new-game-btn">Nieuw Spel</button>
         </aside>
     </div>
 </div>
-<script src="script.js"></script>
+
+<!-- Laad het script -->
+<script type="module" src="js/main.js" defer></script>
 </body>
 </html>

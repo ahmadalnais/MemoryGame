@@ -1,0 +1,17 @@
+Hoofstuk 2.5
+In hoofdstuk 2.5 van het proefschrift "JavaScript: an analysis of the language and its impact on web development" wordt de impact van JavaScript geanalyseerd door te testen hoe websites functioneren met JavaScript in- en uitgeschakeld.
+De methode omvat het bezoeken van populaire webpagina's, zowel met JavaScript ingeschakeld als uitgeschakeld, en het observeren van verschillen in functionaliteit, uiterlijk en laadtijden. Voorbeelden van geteste websites zijn onder andere Google Docs en Stuff.tv.
+Deze aanpak toont aan hoe afhankelijk moderne websites zijn van JavaScript voor een goede gebruikerservaring.
+Ik heb het geprobeerd met mijn werk website en niks werkt meer. Alle knoppen doen niks. sommige pagina laden niet meer en ik krijg een witte pagina.
+Ik heb ook het geprobeerd met Facebook en ik krijg een raar styles en de posten gingen door elkaar
+
+Hoofdstuk 2.7. "Will it still be relevant in the future?"
+In hoofdstuk 2.7 wordt als reden om alternatieven voor JavaScript te overwegen genoemd dat JavaScript een geïnterpreteerde taal is.
+Dit betekent dat de code pas tijdens de runtime wordt vertaald naar machine-instructies, wat het mogelijk maakt voor kwaadwillenden om toegang te krijgen tot de broncode van een applicatie.
+Dit veiligheidsrisico is een belangrijk argument voor sommige ontwikkelaars om andere talen zoals Python of Ruby te overwegen, vooral wanneer beveiliging een cruciale factor is.
+
+JavaScript heeft door de jaren heen enorme verbeteringen in snelheid en efficiëntie gezien, dankzij Just-In-Time (JIT) compilers zoals Google's V8-engine.
+Veel alternatieven kunnen niet hetzelfde prestatieniveau bereiken zonder vergelijkbare inspanningen.
+
+Praktijkvoorbeeld: Webapplicaties zoals Google Docs vertrouwen op JavaScript vanwege de snelle performance en asynchrone functionaliteit, zoals met Promises en async/await.
+Alternatieven zouden moeite hebben om deze snelheid te evenaren zonder significante optimalisaties.
