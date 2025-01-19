@@ -40,32 +40,34 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Memory game */
+/* Memory game layout */
 .memory-game {
     display: flex;
-    gap: 30px; /* Ruimte tussen grid en sidebar */
+    gap: 20px; /* Ruimte tussen grid en sidebar */
     justify-content: center;
     align-items: flex-start;
     width: 100%;
+    flex-wrap: wrap; /* Zorg dat layout zich aanpast op kleinere schermen */
 }
 
 .memory-grid {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 1fr); /* Aangepaste breedte dynamisch via JS */
-    flex: 1; /* Laat het grid zoveel mogelijk ruimte innemen */
-    max-width: 70%; /* Limiteer de breedte voor grote schermen */
+    width: 100%;
+    max-width: 600px; /* Maximale breedte op grote schermen */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamische grootte voor kaarten */
+    flex: 1;
 }
 
 .card {
-    width: 100%;
-    padding-top: 100%;
+    position: relative;
+    width: 100%; /* Vul de volledige breedte binnen de kolom */
+    padding-top: 100%; /* Zorg voor een vierkante vorm */
     background-color: var(--closed-color);
     transition: background-color 0.3s ease;
-    position: relative;
-    cursor: pointer;
     border-radius: 5px;
     border: 1px solid #333;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,22 +75,22 @@ button:hover {
 }
 
 .card img {
+    position: absolute; /* Zorg dat de afbeelding het hele kaartoppervlak bedekt */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
+    object-fit: cover; /* Zorg dat afbeeldingen correct schalen */
     display: none;
-
+    border-radius: inherit;
 }
 
-
 .card.open {
-    color: white;
     background-color: var(--open-color);
 }
 
 .card.open img {
-    display: block;
+    display: block; /* Toon de afbeelding als de kaart open is */
 }
 
 .card.found {
@@ -96,15 +98,15 @@ button:hover {
     cursor: default;
 }
 
-
 /* Sidebar */
 .sidebar {
     background-color: #fff;
     padding: 15px;
     border-radius: 10px;
-    width: 300px; /* Vaste breedte van de sidebar */
+    width: 300px; /* Vaste breedte op desktops */
     text-align: left;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Visueel onderscheid */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Ruimte tussen grid en sidebar op kleinere schermen */
 }
 
 .sidebar h2 {
@@ -127,22 +129,34 @@ button:hover {
 }
 
 /* Responsiviteit */
+@media (max-width: 1024px) {
+    .memory-grid {
+        max-width: 90%; /* Gebruik bijna de volledige breedte op tablets */
+    }
+
+    .sidebar {
+        width: 100%; /* Volledige breedte op tablets */
+    }
+}
+
 @media (max-width: 768px) {
     .memory-game {
-        flex-direction: column;
+        flex-direction: column; /* Layout wordt verticaal op telefoons */
         align-items: center;
     }
 
     .memory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Kleinere kaarten op telefoons */
         max-width: 100%;
     }
 
     .sidebar {
-        width: 100%;
+        width: 100%; /* Sidebar neemt volledige breedte in */
         margin-top: 20px;
     }
 }
 
+/* Variabelen voor kleuren */
 :root {
     --closed-color: #89f357;
     --open-color: #006400;
