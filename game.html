@@ -3,46 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Memory</title>
-    <link rel="stylesheet" href="styles_memory_game.css">
+    <title>Javascript Memory Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="container">
-    <h1>Javascript memory</h1>
+    <h1>Javascript Memory</h1>
 
     <!-- Info-sectie -->
     <div class="info">
-        <p>Verlopen tijd: <span id="elapsed-time">64 seconden.</span></p>
-        <p>Gevonden kaart-paren: <span id="found-pairs">1</span></p>
-        <p>Resterende toontijd:
-            <progress class="toontijd" id="timer-bar" value="58" max="100"></progress>
-        </p>
+        <p>Verlopen tijd: <span id="elapsed-time">0</span> seconden</p>
+        <p>Gevonden kaart-paren: <span id="found-pairs">0</span></p>
+        <button id="start-game">Start Spel</button>
     </div>
 
-    <!-- Grid en Sidebar -->
-    <div class="game-area">
-        <!-- Memory Grid -->
-        <div class="memory-grid">
-            <div class="card">+</div>
-            <div class="card found">E</div>
-            <div class="card found">E</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card">+</div>
-            <div class="card open">M</div>
-            <div class="card open">M</div>
-            <div class="card open">M</div>
-            <div class="card found">E</div>
-            <div class="card found">E</div>
-            <div class="card open">M</div>
-            <div class="card open">M</div>
-            <div class="card">+</div>
-
-            <!-- Meer kaarten kunnen hier worden toegevoegd -->
+    <!-- Memory grid -->
+    <div class="memory-game">
+        <div class="memory-grid" id="memory-grid">
+            <!-- De kaarten worden dynamisch geladen via JavaScript -->
         </div>
 
         <!-- Sidebar -->
@@ -57,12 +35,14 @@
             </ol>
             <p><b>Gemiddelde speeltijd:</b> <span>0s (64s)</span></p>
             <div class="controls">
-                <label><b>Karakter op kaarten:</b> <input type="number" min="1" max="10" value="6"></label>
+                <label><b>Karakter op kaarten:</b>
+                    <input type="number" id="char-count" min="1" max="10" value="6">
+                </label>
                 <label><b>Afmeting bord:</b>
-                    <select>
-                        <option>6</option>
-                        <option>8</option>
-                        <option>10</option>
+                    <select id="board-size">
+                        <option value="4">4 x 4</option>
+                        <option value="6">6 x 6</option>
+                        <option value="8">8 x 8</option>
                     </select>
                 </label>
             </div>
@@ -78,13 +58,14 @@
                 </tr>
                 <tr>
                     <td><label for="found-color">Gevonden:</label></td>
-                    <td><input class='color-width' type="color" id="found-color" value="#800080"></td>
+                    <td><input class="color-width" type="color" id="found-color" value="#800080"></td>
                 </tr>
             </table>
 
-            <button class="new-game">Nieuw Spel</button>
+            <button class="new-game" id="new-game">Nieuw Spel</button>
         </aside>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
