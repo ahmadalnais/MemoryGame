@@ -1,0 +1,47 @@
+Use-cases van JWT
+
+JWT wordt vaak gebruikt voor:
+
+Authenticatie: Gebruikers inloggen en toegang krijgen tot beschermde routes zonder dat de server sessies hoeft te beheren.
+
+Informatie-uitwisseling: JWT kan betrouwbaar gegevens uitwisselen tussen twee partijen, waarbij de integriteit van de informatie gewaarborgd blijft.
+
+Stateless sessions: JWT elimineert de noodzaak voor server-side sessies, wat handig is bij schaalbare applicaties.
+
+Reflectie:In de memory-opdracht wordt JWT gebruikt voor authenticatie. Dit is geschikt omdat het spel werkt met een stateless back-end, waardoor sessies eenvoudig beheerd kunnen worden zonder extra serverbelasting. Bij de IWA-opdracht is JWT nuttig voor gebruikersauthenticatie en het beveiligen van routes binnen de applicatie.
+
+Voordelen van JWT
+
+Stateless en schaalbaar: De server hoeft geen sessies te beheren, waardoor JWT goed werkt in gedistribueerde systemen.
+
+Compact formaat: JWT’s zijn klein en efficiënt te versturen via HTTP-headers.
+
+Cross-platform compatibiliteit: JWT kan eenvoudig worden gebruikt in verschillende technologieën en programmeertalen.
+
+Reflectie:Voor de memory-opdracht helpt de stateless aard van JWT om serverbelasting te verminderen en de prestaties te verbeteren. Voor de IWA-opdracht maakt JWT het eenvoudiger om de applicatie te schalen en met verschillende frontend-technologieën te werken.
+
+Nadelen van JWT
+
+Niet-intrekbaar: Eenmaal uitgedeelde tokens kunnen niet eenvoudig worden ingetrokken.
+
+Groot formaat: JWT’s kunnen door extra claims onnodig groot worden, wat invloed heeft op de netwerksnelheid.
+
+Beveiligingsrisico’s: Slecht geïmplementeerde JWT’s kunnen kwetsbaar zijn voor aanvallen, zoals token diefstal en replay attacks.
+
+Reflectie:Het niet kunnen intrekken van JWT’s kan problematisch zijn. In de memory-opdracht kan een gestolen token leiden tot ongeoorloofde toegang totdat de token verloopt. In de IWA-opdracht is extra beveiliging nodig, zoals korte geldigheidsduur en refresh tokens, om misbruik te minimaliseren.
+
+Best Practices
+
+Gebruik HTTPS: Voorkomt onderschepping van tokens.
+
+Houd tokens kort geldig: Vermindert het risico bij token diefstal.
+
+Bewaar tokens veilig: Gebruik veilige opslagmethoden, zoals HTTP-only cookies in plaats van localStorage.
+
+Valideer zorgvuldig: Controleer altijd de handtekening en claims, zoals de vervaldatum en de afzender.
+
+Reflectie:Beide projecten kunnen profiteren van deze best practices. Voor de memory-opdracht is een korte tokenlevensduur voldoende, aangezien sessies kort zijn. Voor de IWA-opdracht is veilige opslag en validatie cruciaal, omdat hier mogelijk gevoelige gebruikersgegevens worden verwerkt.
+
+Conclusie
+
+JWT past goed binnen beide opdrachten, mits correct geïmplementeerd. De memory-opdracht profiteert van de stateless aard en eenvoudige authenticatie, terwijl de IWA-opdracht extra beveiligingsmaatregelen vereist om gebruikersgegevens te beschermen.
